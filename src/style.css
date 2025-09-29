@@ -1,0 +1,44 @@
+:root {
+  --darkest: #242225;
+  --lightest: #E1E0E8;
+  --accent: #BC5536;
+  --light: #C4C4CA;
+  --dark: #545456;
+
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+.font-headline {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-headline_bold {
+  font-weight: 700;
+}
+
+.font-accent {
+  font-family: "Sacramento", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
