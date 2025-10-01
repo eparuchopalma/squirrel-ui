@@ -1,11 +1,11 @@
-import api from './api';
+import api from "./api";
 
 export function createFund(name: string, demo: boolean) {
-  return api.post(demo ? '/public/fund' : '/fund', { name })
+  return api.post(demo ? "/public/fund" : "/fund", { name })
 }
 
 export function readFunds(demo: boolean) {
-  return api.get(demo ? '/public/fund' : '/fund')
+  return api.get(demo ? "/public/fund" : "/fund")
 }
 
 export function updateFund({ id, name }: { id: string, name: string }, demo: boolean) {
