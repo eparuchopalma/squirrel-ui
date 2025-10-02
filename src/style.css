@@ -10,22 +10,13 @@
   font-weight: 400;
   font-style: normal;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--lightest);
+  background-color: var(--darkest);
 }
 
-.font-headline {
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
   font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.font-headline_bold {
-  font-weight: 700;
-}
-
-.font-accent {
-  font-family: "Sacramento", cursive;
   font-weight: 400;
   font-style: normal;
 }
@@ -43,9 +34,35 @@ body {
   text-align: center;
 }
 
+.title {
+  font-size: 28px;
+}
+
+.button-container {
+  margin: 60px auto 0;
+}
+
 .button {
+  height: 24px;
+  width: 120px;
+  border: none;
+  border-radius: 2px;
+  background-color: var(--accent);
+  font-size: 14px;
+  color: var(--lightest);
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  cursor: pointer;
+  box-shadow: 0 1px 4px #111;
+  transition: all 0.6s ease;
+}
+
+.button_secondary {
+  background-color: var(--darkest);
+}
+
+.button:hover {
+  box-shadow: 0 1px 4px var(--dark);
 }
