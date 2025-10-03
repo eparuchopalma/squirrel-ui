@@ -10,25 +10,25 @@ type Payload = {
 }
 
 export function createRecord(payload: Payload, demo: boolean) {
-  api.post(demo ? "/public/record" : "/record", payload)
+  return api.post(demo ? "/public/record" : "/record", payload)
     .then(handleResponse)
     .catch(handleError)
 }
 
 export function readRecords(demo: boolean) {
-  api.get(demo ? "/public/record" : "/record")
+  return api.get(demo ? "/public/record" : "/record")
     .then(handleResponse)
     .catch(handleError)
 }
 
 export function updateRecord({ id, name }: { id: string, name: string }, demo: boolean) {
-  api.patch(demo ? `/public/record/${id}` : `/record/${id}`, { name })
+  return api.patch(demo ? `/public/record/${id}` : `/record/${id}`, { name })
     .then(handleResponse)
     .catch(handleError)
 }
 
 export function deleteRecord(id: string, demo: boolean) {
-  api.delete(demo ? `/public/record/${id}` : `/record/${id}`)
+  return api.delete(demo ? `/public/record/${id}` : `/record/${id}`)
     .then(handleResponse)
     .catch(handleError)
 }

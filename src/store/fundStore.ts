@@ -1,4 +1,5 @@
 import { reactive } from "vue"
+import { authStore } from "./authStore"
 import { readFunds } from "../services/fundService"
 
 type Fund = {
@@ -10,5 +11,12 @@ type Fund = {
 
 export const fundStore = reactive({
   funds: [] as Fund[],
-  readFunds
+  async getFunds() {
+    const response = await readFunds(authStore.inDemo)
+    if (!response.errorMessage) this.setFunds(response.data)
+    return response
+  },
+  setFunds(funds: Fund[]) {
+    this.funds = funds
+  }
 })
