@@ -1,4 +1,4 @@
-import api from "./api"
+import { api, handleError, handleResponse } from "./api"
 
 type Payload = {
   amount: number
@@ -10,17 +10,25 @@ type Payload = {
 }
 
 export function createRecord(payload: Payload, demo: boolean) {
-  return api.post(demo ? "/public/record" : "/record", payload)
+  api.post(demo ? "/public/record" : "/record", payload)
+    .then(handleResponse)
+    .catch(handleError)
 }
 
 export function readRecords(demo: boolean) {
-  return api.get(demo ? "/public/record" : "/record")
+  api.get(demo ? "/public/record" : "/record")
+    .then(handleResponse)
+    .catch(handleError)
 }
 
 export function updateRecord({ id, name }: { id: string, name: string }, demo: boolean) {
-  return api.patch(demo ? `/public/record/${id}` : `/record/${id}`, { name })
+  api.patch(demo ? `/public/record/${id}` : `/record/${id}`, { name })
+    .then(handleResponse)
+    .catch(handleError)
 }
 
 export function deleteRecord(id: string, demo: boolean) {
-  return api.delete(demo ? `/public/record/${id}` : `/record/${id}`)
+  api.delete(demo ? `/public/record/${id}` : `/record/${id}`)
+    .then(handleResponse)
+    .catch(handleError)
 }
